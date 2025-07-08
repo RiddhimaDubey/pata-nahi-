@@ -1,0 +1,269 @@
+.timeline-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding-bottom: var(--space-sm);
+    padding-top: var(--space-3xl);
+    background: linear-gradient(135deg, #f8f4ff 0%, #fff0f8 50%, #f4f8ff 100%);
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .timeline-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(76, 18, 152, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(205, 84, 115, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .timeline-container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .timeline-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #2e0854;
+    margin-bottom: var(--space-sm);
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .timeline-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #666;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .timeline-content {
+    position: relative;
+    display: flex;
+    gap: var(--space-3xl);
+    align-items: flex-start;
+  }
+  
+  .timeline-content::before {
+    content: '';
+    position: absolute;
+    top: calc(-200px - 1in);
+    right: -200px;
+    width: 900px;
+    height: 140%;
+    background-image: url('../assets/branch.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .timeline-left {
+    flex: 1;
+    max-width: 100%;
+    position: relative;
+    padding-bottom: 120px;
+    z-index: 2;
+  }
+
+  .timeline-left::before {
+    content: '';
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    bottom: 54px;
+    width: 4px;
+    background: linear-gradient(to bottom, #4C1298, #CD5473);
+    border-radius: 2px;
+    z-index: 0;
+  }
+
+  .timeline-right {
+    display: none;
+  }
+  
+  .timeline-step {
+    margin-bottom: var(--space-3xl);
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .timeline-step:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-step.step-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .step-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4C1298, #CD5473);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 8px 25px rgba(76, 18, 152, 0.3);
+    position: relative;
+    z-index: 2;
+    transition: all var(--transition-normal);
+    border: 4px solid white;
+    flex-shrink: 0;
+  }
+
+  .timeline-step:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(76, 18, 152, 0.4);
+  }
+
+  .step-content {
+    flex: 1;
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(76, 18, 152, 0.1);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(76, 18, 152, 0.03), transparent);
+    transition: left var(--transition-slow);
+  }
+
+  .timeline-step:hover .step-content::before {
+    left: 100%;
+  }
+
+  .timeline-step:hover .step-content {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(76, 18, 152, 0.2);
+  }
+  
+  .step-content h3 {
+    margin-bottom: var(--space-md);
+    color: #2e0854;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .step-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    position: relative;
+    z-index: 1;
+  }
+
+  .feature-tag {
+    background: linear-gradient(135deg, rgba(76, 18, 152, 0.1), rgba(205, 84, 115, 0.1));
+    color: #4C1298;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(76, 18, 152, 0.2);
+    transition: all var(--transition-normal);
+  }
+
+  .feature-tag:hover {
+    background: linear-gradient(135deg, rgba(76, 18, 152, 0.15), rgba(205, 84, 115, 0.15));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(76, 18, 152, 0.2);
+  }
+  
+  .timeline-cta {
+    position: absolute;
+    left: -56px;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  
+  .start-button {
+    background: linear-gradient(135deg, #4C1298, #CD5473);
+    color: white;
+    padding: var(--space-md) var(--space-2xl);
+    border-radius: 50px;
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    box-shadow: 0 8px 25px rgba(76, 18, 152, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .start-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--transition-slow);
+  }
+
+  .start-button:hover::before {
+    left: 100%;
+  }
+
+  .start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(76, 18, 152, 0.4);
+  }
+
+  .start-button svg {
+    transition: transform var(--transition-normal);
+  }
+
+  .start-button:hover svg {
+    transform: translateX(4px);
+  }
+  
+  
+  
+
+  

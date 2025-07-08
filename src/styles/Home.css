@@ -1,0 +1,71 @@
+/* Home Page Styles - Enhanced spacing and layout */
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section spacing for home page components */
+.home-page > * {
+  margin-bottom: 0;
+}
+
+/* Specific spacing between sections */
+.home-page > *:not(:last-child) {
+  margin-bottom: var(--space-sm);
+}
+
+/* Hero section gets no bottom margin as it's handled internally */
+.home-page > section:first-child {
+  margin-bottom: var(--space-xl);
+}
+
+/* Enhanced container with responsive padding */
+.home-container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Section wrapper for consistent spacing */
+.home-section {
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.home-section:first-child {
+  padding-top: 0;
+}
+
+.home-section:last-child {
+  padding-bottom: var(--space-2xl);
+}
+
+/* Legacy container for backward compatibility */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.header {
+  padding: var(--space-sm) 0;
+}
+
+
+
+/* Smooth scroll enhancement */
+.home-page {
+  scroll-behavior: smooth;
+}
+
+/* Optionally, target Timeline section specifically for even less space */
+.timeline-section {
+  margin-bottom: 0 !important;
+}
+
+
+  

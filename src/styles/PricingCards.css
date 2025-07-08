@@ -1,0 +1,210 @@
+/* ---------- Layout ---------- */
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.pricing-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---------- Flip Card Structure ---------- */
+.flip-card {
+  width: 488px;
+  height: 668px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 668px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 668px;
+  border-radius: 20px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  border-radius: 32px;
+}
+
+/* ---------- Card Structure ---------- */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Header */
+.card-header {
+  background: white;
+  padding: 1.2rem;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-start;
+}
+.card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2d0c44;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.java-icon {
+  font-size: 2.2rem;
+  color: #f89820;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* Body */
+.card-body {
+  flex: 1;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card-features {
+  list-style: disc;
+  padding-left: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  background: #e9dff3;
+  color: #2d0c44;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Back Content (not used, but kept for modal) */
+.card-back-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: white;
+  line-height: 1.6;
+  text-align: left;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* ---------- Themes ---------- */
+
+/* FREE Tier */
+.card--free .card-body {
+  background-color: #6c4a89;
+}
+.card--free .card-back-content {
+  background-color: #6c4a89;
+}
+.card--free .card-button {
+  margin-top: 0.5rem;
+}
+
+/* PREMIUM Tier */
+.card--premium .card-body {
+  background: linear-gradient(to bottom, #8647a7, #c95a8e);
+}
+.card--premium .card-back-content {
+  background: linear-gradient(to bottom, #8647a7, #c95a8e);
+}
+
+/* ---------- Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 90%;
+  text-align: left;
+}
+
+.enrollment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.enrollment-form label {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.enrollment-form input {
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.enrollment-form button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.enrollment-form button[type="submit"] {
+  background: #6c4a89;
+  color: white;
+}
+
+.enrollment-form button[type="button"] {
+  background: #ccc;
+  color: black;
+}
